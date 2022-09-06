@@ -1,0 +1,129 @@
+---
+- name: 
+  hosts: AU350CSM-S-8-1
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+
+# Refers to: https://docs.ansible.com/ansible/latest/collections/junipernetworks/junos/junos_interfaces_module.html 
+# Need to assign a VLAN, and set a description.
+
+- name: "Assign VLAN to Office 1 South - Level 8"
+  junipernetworks.junos.junos_l2_interfaces:
+    config:
+
+    - name: ge-1/0/45 #WS095  Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-1/0/47 #WS096  Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/2  #WS098 Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/4  #WS099  Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/6  #WS100  Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/8  #WS101 Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/10 #WS102 Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/12 #WS103  Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/14 #WS104 Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/16 #WS105 Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/18 #WS106 Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/20 #WS107 Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/30 #WS112 Office 1S
+      access:
+        vlan: vlan.0090
+    - name: ge-2/0/32 #WS113 Office 1S
+      access:
+        vlan: vlan.0090
+    state: replaced
+
+
+- name: Merge provided configuration with device configuration (default operation is merge)
+  junipernetworks.junos.junos_interfaces:
+    config:
+    - name: ge-1/0/45
+      description: "WS095 - Level 8 South - Office 1S - Occupied"
+    - name: ge-1/0/47
+      description: "WS096 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/2
+      description: "WS098 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/4
+      description: "WS099 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/6
+      description: "WS100 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/8
+      description: "WS101 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/10
+      description: "WS102 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/12
+      description: "WS103 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/14
+      description: "WS104 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/16
+      description: "WS105 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/18
+      description: "WS106 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/20
+      description: "WS107 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/30
+      description: "WS112 - Level 8 South - Office 1S - Occupied"
+    - name: ge-2/0/32
+      description: "WS113 - Level 8 South - Office 1S - Occupied"
+    state: merged
+
+
+
+#- name: "Delete L2 attributes of given interfaces (Note: This won't delete the interface itself)."
+#  junipernetworks.junos.junos_l2_interfaces:
+#    config:
+#    - name: ge-0/0/1
+#    - name: ge-0/0/2
+#    - name: ge-1/0/45
+#    - name: ge-1/0/47
+#    - name: ge-2/0/2
+#    - name: ge-2/0/4
+#    - name: ge-2/0/6
+#    - name: ge-2/0/8
+#    - name: ge-2/0/10
+#    - name: ge-2/0/12
+#    - name: ge-2/0/14
+#    - name: ge-2/0/16
+#    - name: ge-2/0/18
+#    - name: ge-2/0/20
+#    - name: ge-2/0/30
+#    - name: ge-2/0/32
+#    state: deleted
+
+
+###  This code works, but the config file formatting isn't right 
+#   - name: L2
+#     junipernetworks.junos.junos_l2_interfaces:
+#       config:
+#        - name: ge-0/0/1
+#          access:
+#            vlan: vlan.0002
+#        - name: ge-0/0/2
+#          access:
+#            vlan: vlan.0003
+#      state: replaced
