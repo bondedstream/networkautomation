@@ -1,0 +1,4 @@
+---
+  - name: run show version
+    junipernetworks.junos.junos_command:
+      commands: show version

@@ -1,0 +1,29 @@
+#BaseTemplate-PortConfig
+---
+- name: Config
+  hosts: AU9DCAM
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+  - name: "Replace provided config with device configuration"
+#    junipernetworks.junos.junos_command:
+#      commands: show version
+    junipernetworks.junos.junos_l2_interfaces:
+      config:
+        - name: ge-0/0/1
+          access:
+            vlan: vlan.0002
+        - name: ge-0/0/2
+          access:
+            vlan: vlan.0003
+      state: replaced
+
+    junipernetworks.junos.junos_interfaces:
+      config
+      - name: ge-0/0/1
+        description: WS001 - Office 1 - Spare
+      - name: ge-0/0/2
+        description: Configured by Ansible -2
+      state: replaced

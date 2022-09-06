@@ -1,0 +1,38 @@
+---
+- name: 
+  hosts: AU9DCAM
+  connection: local
+  gather_facts: no
+
+  tasks:
+
+  - name: "Replace provided config with device configuration"
+    junipernetworks.junos.junos_command:
+      commands: 
+
+
+#  -name: L2
+#    junipernetworks.junos.junos_l2_interfaces:
+#      config:
+#        - name: ge-0/0/1
+#          access:
+#            vlan: vlan.0002
+#        - name: ge-0/0/2
+#          access:
+#            vlan: vlan.0003
+#      state: replaced
+
+ # - name: "Assign Descriptions"
+ #   junipernetworks.junos.junos_interfaces:
+ #     config:
+ #       - name: ge-0/0/1
+ #         description: "WS001 - Office 1 - Spare"
+ #       - name: ge-0/0/2
+ #         description: "WS002 - Office 2 - BIGTHUMB"
+ #     state: overridden
+ # - name: Override device configuration of all interfaces with provided configuration
+ #   junipernetworks.junos.junos_interfaces:
+ #   config:  
+ #   - name: ge-0/0/2
+ #     description: Configured
+ #   state: replaced
