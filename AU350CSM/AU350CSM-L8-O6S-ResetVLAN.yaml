@@ -10,20 +10,19 @@
 # Refers to: https://docs.ansible.com/ansible/latest/collections/junipernetworks/junos/junos_interfaces_module.html 
 # Need to assign a VLAN, and set a description.
 
-- name: "Assign VLAN to Office 1 South - Level 8"
+- name: "Assign VLAN to Office 6 South - Level 8"
   junipernetworks.junos.junos_l2_interfaces:
     config:
-
-    - name: ge-1/0/41 #WS093  Office 4S
+    - name: ge-0/0/18 #WS010  Office 6S
       access:
         vlan: vlan.0090
-    - name: ge-1/0/43 #WS094  Office 4S
+    - name: ge-0/0/20 #WS011  Office 6S
       access:
         vlan: vlan.0090
-    - name: ge-2/0/26  #WS110 Office 4S
+    - name: ge-0/0/26  #WS014 Office 6S
       access:
         vlan: vlan.0090
-    - name: ge-2/0/28  #WS111  Office 4S
+    - name: ge-0/0/28  #WS015  Office 6S
       access:
         vlan: vlan.0090
     state: replaced
@@ -32,15 +31,16 @@
 - name: Merge provided configuration with device configuration (default operation is merge)
   junipernetworks.junos.junos_interfaces:
     config:
-    - name: ge-1/0/41
-      description: "WS093 - Level 8 South - Office 4S - Occupied"
-    - name: ge-1/0/43
-      description: "WS094 - Level 8 South - Office 4S - Occupied"
-    - name: ge-2/0/26
-      description: "WS110 - Level 8 South - Office 4S - Occupied"
-    - name: ge-2/0/28
-      description: "WS111 - Level 8 South - Office 4S - Occupied"
+    - name: ge-0/0/18
+      description: "WS010 - Level 8 South - Office 6S - CSC"
+    - name: ge-0/0/20
+      description: "WS011 - Level 8 South - Office 6S - CSC"
+    - name: ge-0/0/26
+      description: "WS014 - Level 8 South - Office 6S - CSC"
+    - name: ge-0/0/28
+      description: "WS015 - Level 8 South - Office 6S - CSC"
     state: merged
+
 
 
 #- name: "Delete L2 attributes of given interfaces (Note: This won't delete the interface itself)."
@@ -64,6 +64,7 @@
 #    - name: ge-2/0/32
 #    state: deleted
 
+
 ###  This code works, but the config file formatting isn't right 
 #   - name: L2
 #     junipernetworks.junos.junos_l2_interfaces:
@@ -75,4 +76,3 @@
 #          access:
 #            vlan: vlan.0003
 #      state: replaced
-

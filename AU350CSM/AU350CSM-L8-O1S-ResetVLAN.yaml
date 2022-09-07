@@ -10,7 +10,7 @@
 # Refers to: https://docs.ansible.com/ansible/latest/collections/junipernetworks/junos/junos_interfaces_module.html 
 # Need to assign a VLAN, and set a description.
 
-- name: "Assign VLAN to Office 1 South - Level 8"
+- name: Assign VLAN to Office 1 South - Level 8
   junipernetworks.junos.junos_l2_interfaces:
     config:
 
