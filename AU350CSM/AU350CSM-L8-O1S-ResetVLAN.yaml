@@ -2,7 +2,11 @@
 - name: 
   hosts: AU350CSM-S-8-1
   connection: local
-  gather_facts: no
+  gather_facts: False
+  become: False
+
+  roles:
+    - junipernetworks.junos
 
 # Refers to: https://docs.ansible.com/ansible/latest/collections/junipernetworks/junos/junos_interfaces_module.html 
 # Need to assign a VLAN, and set a description.
