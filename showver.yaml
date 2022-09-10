@@ -1,4 +1,10 @@
 ---
+- name: 
+  hosts: AU350CSM-S-8-1
+  connection: local
+  gather_facts: no
+
+  tasks:
   - name: run show version
     junipernetworks.junos.junos_command:
       commands: show version
