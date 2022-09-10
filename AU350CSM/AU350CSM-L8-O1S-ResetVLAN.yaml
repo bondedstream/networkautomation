@@ -14,82 +14,82 @@
   - name: Assign VLAN to Office 1 South - Level 8
     junos_l2_interfaces:
       config:
-      - name: ge-1/0/45 #WS095  Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-1/0/47 #WS096  Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/2  #WS098 Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/4  #WS099  Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/6  #WS100  Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/8  #WS101 Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/10 #WS102 Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/12 #WS103  Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/14 #WS104 Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/16 #WS105 Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/18 #WS106 Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/20 #WS107 Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/30 #WS112 Office 1S
-        access:
-          vlan: vlan.0090
-      - name: ge-2/0/32 #WS113 Office 1S
-        access:
-          vlan: vlan.0090
+        - name: ge-1/0/45 #WS095  Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-1/0/47 #WS096  Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/2  #WS098 Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/4  #WS099  Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/6  #WS100  Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/8  #WS101 Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/10 #WS102 Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/12 #WS103  Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/14 #WS104 Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/16 #WS105 Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/18 #WS106 Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/20 #WS107 Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/30 #WS112 Office 1S
+          access:
+            vlan: vlan.0090
+        - name: ge-2/0/32 #WS113 Office 1S
+          access:
+            vlan: vlan.0090
       state: replaced
 
 
   - name: Merge provided configuration with device configuration (default operation is merge)
     junos_interfaces:
       config:
-      - name: ge-1/0/45
-        description: "WS095 - Level 8 South - Office 1S - Occupied"
-      - name: ge-1/0/47
-        description: "WS096 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/2
-        description: "WS098 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/4
-        description: "WS099 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/6
-        description: "WS100 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/8
-        description: "WS101 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/10
-        description: "WS102 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/12
-        description: "WS103 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/14
-        description: "WS104 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/16
-        description: "WS105 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/18
-        description: "WS106 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/20
-        description: "WS107 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/30
-        description: "WS112 - Level 8 South - Office 1S - Occupied"
-      - name: ge-2/0/32
-        description: "WS113 - Level 8 South - Office 1S - Occupied"
+        - name: ge-1/0/45
+          description: "WS095 - Level 8 South - Office 1S - Occupied"
+        - name: ge-1/0/47
+          description: "WS096 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/2
+          description: "WS098 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/4
+          description: "WS099 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/6
+          description: "WS100 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/8
+          description: "WS101 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/10
+          description: "WS102 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/12
+          description: "WS103 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/14
+          description: "WS104 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/16
+          description: "WS105 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/18
+          description: "WS106 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/20
+          description: "WS107 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/30
+          description: "WS112 - Level 8 South - Office 1S - Occupied"
+        - name: ge-2/0/32
+          description: "WS113 - Level 8 South - Office 1S - Occupied"
       state: merged
 
 
