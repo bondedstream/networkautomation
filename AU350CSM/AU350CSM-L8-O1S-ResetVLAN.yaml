@@ -5,14 +5,14 @@
   gather_facts: False
   become: False
 
-  roles:
-    - junipernetworks.junos
+  #roles:
+  #  - junipernetworks.junos
 
 # Refers to: https://docs.ansible.com/ansible/latest/collections/junipernetworks/junos/junos_interfaces_module.html 
 # Need to assign a VLAN, and set a description.
   tasks:
   - name: Assign VLAN to Office 1 South - Level 8
-    junipernetworks.junos.junos_l2_interfaces:
+    juniper.junos.junos_l2_interfaces:
       config:
       - name: ge-1/0/45 #WS095  Office 1S
         access:
@@ -60,7 +60,7 @@
 
 
   - name: Merge provided configuration with device configuration (default operation is merge)
-    junipernetworks.junos.junos_interfaces:
+    juniper.junos.junos_interfaces:
       config:
       - name: ge-1/0/45
         description: "WS095 - Level 8 South - Office 1S - Occupied"

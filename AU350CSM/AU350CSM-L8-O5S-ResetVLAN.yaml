@@ -2,7 +2,7 @@
 - name: 
   hosts: AU350CSM-S-8-1
   connection: local
-  gather_facts: no
+  gather_facts: False
 
   tasks:
 
@@ -11,7 +11,7 @@
 # Need to assign a VLAN, and set a description.
 
 - name: "Assign VLAN to Office 5 South - Level 8"
-  junipernetworks.junos.junos_l2_interfaces:
+  juniper.junos.junos_l2_interfaces:
     config:
     - name: ge-1/0/37 #WS091  Office 5S
       access:
@@ -35,7 +35,7 @@
 
 
 - name: Merge provided configuration with device configuration (default operation is merge)
-  junipernetworks.junos.junos_interfaces:
+  juniper.junos.junos_interfaces:
     config:
     - name: ge-1/0/37
       description: "WS091 - Level 8 South - Office 5S - Occupied"
